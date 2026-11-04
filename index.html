@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salud en Acción - Salto del Mortiño</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+    body { background-color: #f4f7f6; color: #2d3748; line-height: 1.6; }
+    
+    header { background: linear-gradient(135deg, #1b4332, #2d6a4f); color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    nav { display: flex; justify: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+    .logo { font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+    .nav-links { display: flex; list-style: none; gap: 20px; }
+    .nav-links a { color: white; text-decoration: none; font-weight: 500; cursor: pointer; transition: color 0.3s; }
+    .nav-links a:hover { color: #b7e4c7; }
+
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+    .section { display: none; background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }
+    .section.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    .hero { text-align: center; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover; color: white; padding: 4rem 2rem; border-radius: 12px; margin-bottom: 2rem; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto 1.5rem; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem; transition: transform 0.2s; }
+    .card:hover { transform: translateY(-4px); }
+    .card i { font-size: 2rem; color: #2d6a4f; margin-bottom: 1rem; }
+    .card h3 { color: #1b4332; margin-bottom: 0.5rem; }
+
+    .badge { background-color: #d8f3dc; color: #1b4332; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block; margin-bottom: 1rem; }
+
+    .btn { background-color: #2d6a4f; color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; text-decoration: none; display: inline-block; }
+    .btn:hover { background-color: #1b4332; }
+
+    footer { text-align: center; padding: 2rem; background: #1b4332; color: white; margin-top: 3rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo"><i class="fa-solid fa-person-walking"></i> TeleEducación Mortiño</div>
+      <ul class="nav-links">
+        <li><a onclick="showSection('inicio')">Inicio</a></li>
+        <li><a onclick="showSection('pausas')">Pausas Activas</a></li>
+        <li><a onclick="showSection('beneficios')">Beneficios y Prevención</a></li>
+        <li><a onclick="showSection('plan')">Plan Semanal</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Pantalla Principal / Inicio -->
+    <div id="inicio" class="section active">
+      <div class="hero">
+        <span class="badge">Estrategia de Telesalud - UNAD</span>
+        <h1>Promoción de Actividad Física en el Salto del Mortiño</h1>
+        <p>Programa de educación para la salud adaptado para el equipo de trabajo turístico del Salto del Mortiño. ¡Mantén tu cuerpo activo y protegido durante tu jornada laboral!</p>
+        <button class="btn" onclick="showSection('pausas')">Empezar Pausas Activas</button>
+      </div>
+
+      <h2>¿Por qué es importante para el personal turístico?</h2>
+      <p>El trabajo en el atractivo turístico Salto del Mortiño implica largas jornadas de pie, atención a visitantes y desplazamientos en terreno inclinado. La actividad física continua y guiada previene lesiones osteomusculares, fatiga laboral y estrés.</p>
+
+      <div class="grid">
+        <div class="card">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <h3>Salud Cardiovascular</h3>
+          <p>Mejora la resistencia física requerida para el trabajo en campo y guianza turística.</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-child-reaching"></i>
+          <h3>Prevención de Fatiga</h3>
+          <p>Reduce la tensión muscular acumulada por caminatas continuas o sedentarismo administrativo.</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-users"></i>
+          <h3>Bienestar Laboral</h3>
+          <p>Fomenta un ambiente de trabajo dinámico, activo y saludable para todo el equipo.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pantalla 1: Pausas Activas -->
+    <div id="pausas" class="section">
+      <span class="badge">Módulo 1</span>
+      <h2>Pausas Activas para Trabajadores Turísticos</h2>
+      <p>Realiza estas rutinas rápidas de 5 minutos dos veces al día en tu puesto de trabajo:</p>
+      
+      <div class="grid">
+        <div class="card">
+          <i class="fa-solid fa-arrows-spin"></i>
+          <h3>1. Estiramiento de Espalda</h3>
+          <p>Entrelaza los dedos, estira los brazos hacia adelante y curva suavemente la espalda. Mantén durante 15 segundos.</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-shoe-prints"></i>
+          <h3>2. Movilidad de Tobillos y Piernas</h3>
+          <p>Realiza círculos con los tobillos y levantamiento de talones (20 repeticiones) para reactivar el flujo sanguíneo.</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-arrows-to-eye"></i>
+          <h3>3. Descanso Cervical</h3>
+          <p>Gira la cabeza suavemente hacia los lados y mantén la presión inclinando la oreja hacia el hombro 10 segundos.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pantalla 2: Beneficios y Prevención -->
+    <div id="beneficios" class="section">
+      <span class="badge">Módulo 2</span>
+      <h2>Beneficios y Prevención de Enfermedades</h2>
+      <p>La actividad física regular (150 minutos a la semana) es la principal herramienta de prevención primaria recomendada por la OMS.</p>
+      
+      <div class="grid">
+        <div class="card">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h3>Prevención de Lesiones</h3>
+          <p>Fortalece rodillas y tobillos para transitar con seguridad en los senderos del Salto del Mortiño.</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-brain"></i>
+          <h3>Salud Mental</h3>
+          <p>Disminuye los niveles de cortisol y reduce el estrés laboral asociado a la atención de público masivo.</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-weight-scale"></i>
+          <h3>Control Metabólico</h3>
+          <p>Ayuda a controlar niveles de glucosa, colesterol y presión arterial en chequeos rutinas.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pantalla 3: Plan Semanal -->
+    <div id="plan" class="section">
+      <span class="badge">Módulo 3</span>
+      <h2>Plan Semanal Recomendado</h2>
+      <p>Ajusta este plan diario a tus labores diarias en el centro turístico:</p>
+      
+      <div style="margin-top: 1.5rem; border-left: 4px solid #2d6a4f; padding-left: 1rem;">
+        <h3>Lunes a Viernes: En el trabajo</h3>
+        <p>• 2 Rutinas de Pausas Activas (Mañana / Tarde - 5 min cada una).</p>
+        <p>• Hidratación constante de 2 litros de agua durante la jornada.</p>
+        
+        <h3 style="margin-top: 1rem;">Fines de semana o Días libres</h3>
+        <p>• 30 minutos de caminata a paso ligero, ciclismo o natación.</p>
+        <p>• Ejercicios de fortalecimiento muscular (sentadillas, abdominales ligeros).</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Proyecto de Teleeducación en Salud - UNAD 2026 | Dirigido al personal del Salto del Mortiño</p>
+  </footer>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
